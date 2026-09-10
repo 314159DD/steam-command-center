@@ -1,0 +1,6 @@
+# Extra deps for the standalone PICS build watcher (pics_worker.py) ONLY.
+# Not needed by the main GitHub Actions collector. Install on the VPS:
+#   pip install -r requirements-pics.txt
+steam[client]>=1.4.4  # [client] pulls gevent + eventemitter + protobuf needed by SteamClient
+psycopg[binary]>=3.1
+python-dotenv>=1.0

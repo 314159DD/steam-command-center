@@ -1,0 +1,21 @@
+node_modules/
+.next/
+.env
+*.jpg
+*.png
+!docs/screenshot.png
+
+# Python
+__pycache__/
+*.pyc
+*.egg-info/
+.pytest_cache/
+.venv/
+venv/
+
+# Local PICS watcher secrets (never commit)
+collector/pics.env
+collector/.steam-creds/
+*_authenticator.json
+
+.vercel

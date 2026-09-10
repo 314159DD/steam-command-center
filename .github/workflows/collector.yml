@@ -1,0 +1,27 @@
+name: collector
+# Steam Command Center data collector. Runs one cycle per schedule tick.
+on:
+  schedule:
+    - cron: '*/30 * * * *'   # every 30 minutes
+  workflow_dispatch: {}        # allow manual runs
+jobs:
+  collect:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install collector
+        working-directory: collector
+        run: pip install -e .
+      - name: Run one collection cycle
+        working-directory: collector
+        env:
+          RUN_ONCE: '1'
+          DATABASE_URL: ${{ secrets.DATABASE_URL }}
+          STEAM_API_KEY: ${{ secrets.STEAM_API_KEY }}
+          ITAD_API_KEY: ${{ secrets.ITAD_API_KEY }}
+          TWITCH_CLIENT_ID: ${{ secrets.TWITCH_CLIENT_ID }}
+          TWITCH_CLIENT_SECRET: ${{ secrets.TWITCH_CLIENT_SECRET }}
+        run: python -m steam_collector.run

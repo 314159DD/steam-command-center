@@ -1,0 +1,46 @@
+name: test
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  collector:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install collector
+        working-directory: collector
+        run: pip install -e ".[dev]"
+      - name: Run tests
+        working-directory: collector
+        run: pytest -q
+
+  web:
+    runs-on: ubuntu-latest
+    env:
+      DATABASE_URL: postgresql://user:password@localhost:5432/db
+      STEAM_API_KEY: dummy
+      SESSION_SECRET: dummy-session-secret-for-ci-build-only
+      APP_BASE_URL: http://localhost:3000
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+          cache-dependency-path: web/package-lock.json
+      - name: Install dependencies
+        working-directory: web
+        run: npm ci
+      - name: Run tests
+        working-directory: web
+        run: npm test -- --run
+      - name: Build
+        working-directory: web
+        run: npm run build

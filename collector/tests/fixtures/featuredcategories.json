@@ -1,0 +1,14 @@
+{
+  "specials": { "id": "cat_specials", "items": [
+    { "id": 100, "name": "Cyber Hollow", "discounted": true, "discount_percent": 40,
+      "original_price": 4999, "final_price": 2999, "header_image": "h100.jpg" }
+  ]},
+  "top_sellers": { "id": "cat_topsellers", "items": [
+    { "id": 200, "name": "Star Reach", "discounted": false, "discount_percent": 0,
+      "original_price": 4499, "final_price": 4499, "header_image": "h200.jpg" }
+  ]},
+  "new_releases": { "id": "cat_newreleases", "items": [
+    { "id": 300, "name": "Hollow Veins", "discounted": false, "discount_percent": 0,
+      "original_price": 1999, "final_price": 1999, "header_image": "h300.jpg" }
+  ]}
+}

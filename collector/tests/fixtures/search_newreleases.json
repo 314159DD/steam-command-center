@@ -1,0 +1,5 @@
+{
+  "success": 1,
+  "total_count": 2,
+  "results_html": "<div id=\"search_results\">\n<div class=\"search_header\">New Releases</div>\n<a href=\"https://store.steampowered.com/app/111/\" data-ds-appid=\"111\" class=\"search_result_row\"><div class=\"col search_capsule\"><img src=\"cap111.jpg\"></div><div class=\"responsive_search_name_combined\"><span class=\"title\">Fresh Game One</span></div></a>\n<a href=\"https://store.steampowered.com/app/222/\" data-ds-appid=\"222\" class=\"search_result_row\"><span class=\"title\">Fresh Game Two</span></a>\n</div>"
+}

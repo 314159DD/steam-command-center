@@ -1,0 +1,5 @@
+{
+  "success": 1,
+  "total_count": 3,
+  "results_html": "<div id=\"search_results\">\n<div class=\"search_header\">New &amp; Trending</div>\n<a href=\"https://store.steampowered.com/app/440/\" data-ds-appid=\"440\" class=\"search_result_row\"><div class=\"col search_capsule\"><img src=\"cap440.jpg\"></div><div class=\"responsive_search_name_combined\"><span class=\"title\">Team Fortress 2</span></div></a>\n<a href=\"https://store.steampowered.com/app/570/\" data-ds-appid=\"570\" class=\"search_result_row\"><span class=\"title\">Dota 2</span></a>\n<a href=\"https://store.steampowered.com/app/730/\" data-ds-appid=\"730,12345\" class=\"search_result_row\"><span class=\"title\">Counter-Strike 2 &amp; Friends</span></a>\n</div>"
+}
